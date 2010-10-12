@@ -2,11 +2,11 @@
 #
 # Usage:
 #
-#   env BATCH_VARS="file.fa [n]" R -q --no-save --no-restore --no-readline --slave < translate.R
+#   env BATCH_VARS="file.fa [n]" R -q --no-save --no-restore --no-readline --slave < DNAtranslate_GeneR.R
 #
 # Example:
 #
-#   time  env BATCH_VARS="../../test/data/test-dna.fa 2" R -q --no-save --no-restore --no-readline --slave < translate.R > /dev/null
+#   time  env BATCH_VARS="../../test/data/test-dna.fa 2" R -q --no-save --no-restore --no-readline --slave < DNAtranslate_GeneR.R 
 
 fasta = '../../test/data/test-dna.fa'
 
