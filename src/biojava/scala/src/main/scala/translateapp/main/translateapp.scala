@@ -5,8 +5,9 @@
 
 import bio._
 import bio.Protein._
-// import bio.io.Control._
 import java.io._
+import org.biojava.bio.symbol._
+import org.biojava.bio.seq._
 
 object TranslateApp {
   val version = "0.01"
@@ -89,7 +90,16 @@ object TranslateApp {
       println("Reading Fasta file", infile, " x ", times)
 
     }
-    // val list = new FastaReader(infile).toList
+    val f = new FastaReader(infile)
+      val ids = f.foreach { 
+        res => 
+          val (id,tag,dna) = res
+          println((">",id).toString) 
+          // println(dna)
+          val s = new CodonSequence(dna)
+          println(s)
+        }
+
     0
   } // main
 } // object

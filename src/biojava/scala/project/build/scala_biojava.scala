@@ -7,7 +7,8 @@ class ScalaBioJavaProject(info: ProjectInfo) extends DefaultProject(info)
   System.err.println("** HELLO")
   override def unmanagedClasspath = super.unmanagedClasspath +++ 
     ("lib" / "bioscala" ) +++
-    ("lib" / "scala" ) 
+    ("lib" / "scala" ) +++
+    ("lib" / "biojava" ) 
     // ("lib" / "scala" / "biojava" / "core" / "3.0-SNAPSHOT" / "core-3.0-SNAPSHOT.jar") 
 
   val scalaToolsSnapshots = "Scala-Tools Maven2 Snapshots Repository" at "http://scala-tools.org/repo-snapshots"                                                
