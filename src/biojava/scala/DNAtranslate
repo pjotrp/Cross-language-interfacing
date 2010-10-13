@@ -19,5 +19,5 @@ src=`dirname $0`
 javaopts="-Xmx128M -Xms16M -Xss16M"
 
 # lib/scala/biojava-1.7.1.jar
-env JAVA_OPTS="$javaopts" scala -cp $src/target/scala_2.7.7/classes/:$src/lib/bioscala:$src/lib/biojava-1.7.1.jar TranslateApp $*
+env JAVA_OPTS="$javaopts" scala -cp $src/target/scala_2.7.7/classes/:$src/lib/bioscala:$src/lib/biojava/biojava3-core-3.0-SNAPSHOT.jar:$src/lib/biojava/biojava3-genome-3.0-SNAPSHOT.jar TranslateApp $*
 

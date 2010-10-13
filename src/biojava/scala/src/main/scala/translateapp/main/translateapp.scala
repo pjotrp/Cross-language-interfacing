@@ -4,13 +4,14 @@
  */
 
 import bio._
-import bio.Protein._
+// import bio.Protein._
 import java.io._
-import org.biojava.bio.symbol._
-import org.biojava.bio.seq._
+import org.biojava3.core.sequence._
+import org.biojava3.core.sequence.transcription.TranscriptionEngine
+import org.biojava3.core.sequence.io.IUPACParser
 
 object TranslateApp {
-  val version = "0.01"
+  val version = "1.0"
 
   def main(args: Array[String]) {
     val arglist = args.toList
@@ -93,6 +94,9 @@ object TranslateApp {
       println("Reading Fasta file", infile, " x ", times)
 
     }
+    IUPACParser.getInstance().getTable(1);
+    IUPACParser.getInstance().getTable("UNIVERSAL");
+    val engine = TranscriptionEngine.getDefault()
     val f = new FastaReader(infile)
       val ids = f.foreach { 
         res => 
@@ -102,8 +106,12 @@ object TranslateApp {
             println(dna)
           }
           else {
-            val s = new CodonSequence(dna)
-            println(s)
+            // val s = new CodonSequence(dna)
+            // println(dna)
+            // println(dna.mkString.toUpperCase)
+            val dna2 = new DNASequence(dna.mkString.toUpperCase)
+            val rna = dna2.getRNASequence(engine)
+            println(rna.getProteinSequence(engine))
           }
         }
 
