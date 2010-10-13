@@ -3,8 +3,13 @@
 #
 # Usage:
 #
-#   python translate.py dna.fa [n]
+#   python DNAtranslate.py dna.fa [n]
 #
+# Example
+#
+#   python DNAtranslate.py ../../test/data/test-dna.fa
+#
+# Dependencies: python biopython
 
 verbose=False
 
