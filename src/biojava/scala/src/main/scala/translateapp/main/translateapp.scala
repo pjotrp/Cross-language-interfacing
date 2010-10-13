@@ -3,8 +3,8 @@
  *
  */
 
-// import bio._
-// import bio.Protein._
+import bio._
+import bio.Protein._
 // import bio.io.Control._
 import java.io._
 

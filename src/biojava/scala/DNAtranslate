@@ -11,12 +11,13 @@
 #
 #   ./DNAtranslate ../../../test/data/test-dna.fa
 #
-# Dependencies: scala jre biojava
+# Dependencies: scala jre 
+# Included:     bioscala biojava
 #   
 
 src=`dirname $0`
 # javaopts="-Xmx512M -Xms16M -Xss16M"
 
 # lib/scala/biojava-1.7.1.jar
-env JAVA_OPTS="$javaopts" scala -cp $src/target/scala_2.7.7/classes/:$src/lib/scala/biojava-1.7.1.jar TranslateApp $*
+env JAVA_OPTS="$javaopts" scala -cp $src/target/scala_2.7.7/classes/:$src/lib/bioscala:$src/lib/scala/biojava-1.7.1.jar TranslateApp $*
 
