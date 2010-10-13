@@ -23,7 +23,7 @@ object TranslateApp {
 
   Usage:
 
-    ./DNAtranslate [-v] infile [--times n]
+    ./DNAtranslate [-v] [--skip-translate] infile [--times n]
 
   Examples:
 
@@ -48,6 +48,8 @@ object TranslateApp {
         case Nil => map
         case "-v" :: tail =>
                                nextOption(map ++ Map('verbose -> true), tail)
+        case "--skip-translate" :: tail =>
+                               nextOption(map ++ Map('skipTranslate -> true), tail)
         case "--times" :: value :: tail =>
                                nextOption(map ++ Map('times -> value), tail)
 
@@ -80,6 +82,7 @@ object TranslateApp {
    
     val times = getInt('times,1) 
     val verbose = getBool('verbose)
+    val skipTranslate = getBool('skipTranslate)
 
     // --- read input file
     val infile = options.get( 'infile ) match { 
@@ -95,9 +98,13 @@ object TranslateApp {
         res => 
           val (id,tag,dna) = res
           println((">",id).toString) 
-          // println(dna)
-          val s = new CodonSequence(dna)
-          println(s)
+          if (skipTranslate) {
+            println(dna)
+          }
+          else {
+            val s = new CodonSequence(dna)
+            println(s)
+          }
         }
 
     0
