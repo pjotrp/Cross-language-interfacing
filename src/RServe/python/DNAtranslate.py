@@ -13,10 +13,12 @@
 verbose=False
 
 import sys
+import time
 from Bio.Seq import Seq
 from Bio import SeqIO
 from Bio.Alphabet import generic_dna
 
+import subprocess
 import pyRserve
 
 fn = sys.argv[1]
@@ -24,6 +26,10 @@ times = 1
 if len(sys.argv) > 2:
   times = int(sys.argv[2])
 
+# Start the RServer
+subprocess.Popen([r"R","CMD", "Rserve"], stdout=subprocess.PIPE).wait()
+
+time.sleep(0.5)
 conn = pyRserve.rconnect()
 conn('library(GeneR)')
 
@@ -37,3 +43,5 @@ for i in range(0, times):
     ntseq = str(seq_record.seq)
     print conn('strTranslate("'+ntseq+'")')
 
+# Kill the RServer
+subprocess.Popen([r"killall", "Rserve"], stdout=subprocess.PIPE)
