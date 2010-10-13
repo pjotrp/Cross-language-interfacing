@@ -101,7 +101,7 @@ object TranslateApp {
       val ids = f.foreach { 
         res => 
           val (id,tag,dna) = res
-          println((">",id).toString) 
+          println(List(">",id).mkString) 
           if (skipTranslate) {
             println(dna)
           }
