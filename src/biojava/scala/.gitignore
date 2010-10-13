@@ -1,0 +1,7 @@
+*.class
+lib/
+doc/apidoc/
+target/
+lib_managed/
+src_managed/
+project/boot/

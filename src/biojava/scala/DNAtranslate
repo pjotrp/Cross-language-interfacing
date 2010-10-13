@@ -1,0 +1,22 @@
+#! /bin/sh
+#
+# This script invokes the Scala classes for translating a FASTA file
+# using the Biojava implementation
+#
+# Usage:
+#
+#   ./DNAtranslate file.fa [n]
+#
+# Example
+#
+#   ./DNAtranslate ../../../test/data/test-dna.fa
+#
+# Dependencies: scala jre biojava
+#   
+
+src=`dirname $0`
+# javaopts="-Xmx512M -Xms16M -Xss16M"
+
+# lib/scala/biojava-1.7.1.jar
+env JAVA_OPTS="$javaopts" scala -cp $src/target/scala_2.7.7/classes/:$src/lib/scala/biojava-1.7.1.jar TranslateApp $*
+
