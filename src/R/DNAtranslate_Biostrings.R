@@ -14,6 +14,8 @@ args<-strsplit(Sys.getenv('BATCH_VARS'),' ')
 fasta = args$BATCH_VARS[1]
 times = as.integer(args$BATCH_VARS[2])
 
+cat("File=",fasta)
+
 if (is.na(times)) { times = 1 }
 
 library(GeneR)
