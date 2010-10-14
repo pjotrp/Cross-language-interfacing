@@ -11,6 +11,10 @@
 #   ./DNAtranslate.rb ../../../test/data/test-dna.fa
 #
 # Dependencies: ruby bioruby bigbio biolib
+#
+# To use Ruby 1.9 (which is twice as fast as 1.8) use something like
+#
+#   ruby1.9.1 -I ~/opt/ruby/bioruby/lib/ DNAtranslate.rb ../../test/data/test-dna.fa
 
 USAGE =<<EOM
   ruby #{__FILE__} inputfile(s)
