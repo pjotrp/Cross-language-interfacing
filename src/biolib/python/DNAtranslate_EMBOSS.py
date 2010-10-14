@@ -1,3 +1,4 @@
+#! /usr/bin/python
 # Read a FASTA file a number of times (default once), translate
 # using Biolib with EMBOSS and print to STDOUT
 #

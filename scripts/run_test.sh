@@ -93,6 +93,24 @@ short="R+GeneR"
 descr=$short
 cmd="./src/R/DNAtranslate_GeneR.R"
 runRtest
-
+pkgs=""
+short="BioJava"
+descr="BioJava+BioScala"
+cmd="./src/biojava/scala/DNAtranslate"
+runtest
+pkgs=""
+short="biolib+ruby"
+descr="Ruby+BigBio+Biolib/EMBOSS"
+cd src/biolib/ruby
+cmd="./DNAtranslate.rb"
+runtest
+cd ../../..
+pkgs=""
+short="biolib+python"
+descr="Python+BioPython+Biolib/EMBOSS"
+cd src/biolib/python
+cmd="./DNAtranslate_EMBOSS.py"
+runtest
+cd ../../..
 
 echo "Done."
