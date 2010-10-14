@@ -1,0 +1,8 @@
+RPy2
+Python+Rserve
+Bioperl
+Biopython
+BioRuby
+R+Biostrings
+R+GeneR
+
