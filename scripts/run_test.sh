@@ -63,6 +63,11 @@ short="RPy2"
 descr="RPy2+GeneR"
 cmd="python src/RS/RPy2/DNAtranslate_RPy2.py"
 runtest
+pkgs="python python-rpy r-base r-cran-rserve r-cran-rjava default-jdk"
+short="Python+Rserve"
+descr=$short
+cmd="python src/RServe/python/DNAtranslate.py"
+runtest
 pkgs="perl bioperl"
 short="Bioperl"
 descr="Bioperl"
