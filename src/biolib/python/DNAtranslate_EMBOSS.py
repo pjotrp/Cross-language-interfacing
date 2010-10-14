@@ -31,9 +31,9 @@ if verbose:
 for i in range(0, times):
   if verbose:
     print >> sys.stderr, i+1
-  # handle = open(fn, "rU")
-  # for seq_record in SeqIO.parse(handle, "fasta"):
-  for seq_record in SeqIO.parse(fn, "fasta", generic_dna):
+  handle = open(fn, "rU")
+  for seq_record in SeqIO.parse(handle, "fasta"):
+  # for seq_record in SeqIO.parse(fn, "fasta", generic_dna):
     print ">",seq_record.id
     ntseq = str(seq_record.seq)
     ajpseq   = emboss.ajSeqNewNameC(ntseq,seq_record.id)

@@ -12,7 +12,7 @@
 #   ./DNAtranslate ../../../test/data/test-dna.fa
 #
 # Dependencies: scala jre 
-# Included:     bioscala biojava
+# Included:     bioscala biojava3
 #   
 
 src=`dirname $0`

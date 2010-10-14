@@ -20,7 +20,7 @@ object TranslateApp {
       println("""
 
   Translate a FASTA nucleotide sequence file to amino acids (protein) using
-  BioJava translation
+  BioJava3 translation
 
   Usage:
 
