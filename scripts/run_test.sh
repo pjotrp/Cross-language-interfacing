@@ -68,6 +68,11 @@ short="Python+Rserve"
 descr=$short
 cmd="python src/RServe/python/DNAtranslate.py"
 runtest
+pkgs="python r-base python-biopython"
+short="Python+RSOAP"
+descr="Python+RSOAP+GeneR"
+cmd="src/RSOAP/python/DNAtranslate_RSOAP.py"
+runtest
 pkgs="perl bioperl"
 short="Bioperl"
 descr="Bioperl"
