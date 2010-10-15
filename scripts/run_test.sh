@@ -7,6 +7,9 @@ if [ $testname == "--short" ]; then
   testname=$2
 fi
 
+killall RSOAPManager
+killall Rserve
+
 echo $testname
 echo $quick
 
@@ -50,7 +53,7 @@ function runRtest {
 
 timer="/usr/bin/time -f %e"
 if [ ! -z $quick ] ; then
-  testsizes="50 100 200 500"
+  testsizes="50 100 200 500 1000 5000"
   repeat="1"
 else
   testsizes="50 100 200 500 1000 5000 15000 24652"

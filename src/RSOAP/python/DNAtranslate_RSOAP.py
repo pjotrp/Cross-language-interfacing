@@ -29,9 +29,10 @@ if len(sys.argv) > 2:
   times = int(sys.argv[2])
 
 # Start the RSOAPManager
+subprocess.Popen([r"killall", "RSOAPManager"], stdout=subprocess.PIPE).wait()
 subprocess.Popen([r"RSOAPManager"], stdout=subprocess.PIPE)
 
-time.sleep(2.5)
+time.sleep(1.5)
 
 from SOAPpy import *
 RSOAPServer=SOAPProxy('http://localhost:9081')
@@ -50,4 +51,4 @@ for i in range(0, times):
     print RSession.call('strTranslate',ntseq)
 
 # Kill the RServer
-subprocess.Popen([r"RSOAPManager", "--quit"], stdout=subprocess.PIPE)
+subprocess.Popen([r"killall", "RSOAPManager"], stdout=subprocess.PIPE)
