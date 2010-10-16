@@ -1,3 +1,4 @@
+import math
 from matplotlib.pyplot import *
 
 import csv
@@ -9,7 +10,9 @@ for line in open('test1.txt', 'r'):
   name = fields[0]
   numseqs = int(fields[1])
   numsecs = float(fields[2])
-  point = (numseqs, numsecs)
+  throughput = math.log10(float(numseqs)/numsecs)
+  # throughput = (float(numseqs)/numsecs)
+  point = (numseqs, throughput)
   if d.get(name) == None:
     d[name] = []
   d[name].append(point)
@@ -26,26 +29,27 @@ print list
 names,dummy = zip(*list)
 print names
 
-ptypes = [ 'r', 'g', 'b', 'c', 'm', 'y:', 'r--', 'g--', 'b--', 'c--', 'm--', 'y--' ] 
+ptypes = [ 'r', 'g', 'r--', 'c', 'm', 'y:', 'b', 'g--', 'b--', 'c--', 'm--', 'y--' ] 
+marker = [ '^', '^', 's', 'o', 'o', 'o', 'o', 's', 's', 's', 's' ]
 
 i = 0
 for n in names:
   # print n,max,ptypes[i]
   xs, ys = zip(*d[n])
   print ys
-  plot(xs,ys,ptypes[i],label=n, linewidth=2, marker='o')
+  plot(xs,ys,ptypes[i],label=n, linewidth=2, marker=marker[i])
   i = i+1
 
-# xlim(45,510)
-ylim(-0.1,120)
+xlim(0,44000)
+# ylim(-0.1,20)
 # vlines(xs, ymin, ymax, color='k', linestyles='solid')
 
-ylabel('time (sec)')
+ylabel('Throughput log10(sequences/sec)')
 xlabel('sequences')
 
-legend(names, 'upper left', shadow=True)
+legend(names, 'upper right', shadow=True)
 
-title('Translate DNA sequences to protein (lower is better)')
+title('Translate DNA sequences to protein')
 
 # sys.exit()
 show()
