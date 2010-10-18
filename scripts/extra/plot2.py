@@ -10,8 +10,8 @@ for line in open('test1.txt', 'r'):
   name = fields[0]
   numseqs = int(fields[1])
   numsecs = float(fields[2])
-  throughput = math.log10(float(numseqs)/numsecs)
-  # throughput = (float(numseqs)/numsecs)
+  # throughput = math.log10(float(numseqs)/numsecs)
+  throughput = (float(numseqs)/numsecs)
   point = (numseqs, throughput)
   if d.get(name) == None:
     d[name] = []
@@ -37,15 +37,15 @@ for n in names:
   # print n,max,ptypes[i]
   xs, ys = zip(*d[n])
   print ys
-  plot(xs,ys,ptypes[i],label=n, linewidth=2, marker=marker[i])
+  semilogy(xs,ys,ptypes[i],label=n, linewidth=2, marker=marker[i])
   i = i+1
 
-xlim(0,44000)
-# ylim(-0.1,20)
+xlim(0,45000)
+ylim(10,16000)
 # vlines(xs, ymin, ymax, color='k', linestyles='solid')
 
-ylabel('Throughput log10(sequences/sec)')
-xlabel('sequences')
+ylabel('Throughput Seq/s')
+xlabel('Translated protein sequences')
 
 legend(names, 'upper right', shadow=True)
 
