@@ -1,0 +1,23 @@
+#Building
+
+* Make sure Ant is on your classpath *
+
+ant jar 
+
+#Bring in CLASSPATH
+. setup.env
+
+To Run Normal Translation
+#########################
+
+java -Xms128M -Xmx384M javaa.Main -v ../../../test/data/test-dna.fa
+
+To Run REST Server
+##################
+
+java javaa.rest.Server
+
+To Run SOAP Server
+##################
+
+java javaa.soap.Server
