@@ -12,9 +12,7 @@
 #
 # Dependencies: ruby bioruby bigbio biolib
 #
-# To use Ruby 1.9 (which is twice as fast as 1.8) use something like
-#
-#   ruby1.9.1 -I ~/opt/ruby/bioruby/lib/ DNAtranslate.rb ../../test/data/test-dna.fa
+#   jruby DNAtranslate_BioScala.rb ../../test/data/test-dna.fa
 
 USAGE =<<EOM
   ruby #{__FILE__} inputfile(s)
@@ -22,8 +20,16 @@ EOM
 
 $: << File.dirname(__FILE__)+'/lib'
 
-require 'bio'
-include Bio
+require 'java'
+include Java
+# Dir["/some/path/*.jar"].each { |jar| require jar }
+require '/home/wrk/jruby_jars/scala-library.jar'
+# require '/home/wrk/jruby_jars/scala-compiler.jar'
+require '/home/wrk/izip/git/opensource/bioscala/target/scala_2.7.7/bioscala_2.7.7-0.1.jar'
+# include "bio.DNA"
+# include_class "bio.DNA.Sequence"
+include_class('scala.ScalaObject')
+include_class('bio.DNA.Sequence') {'Seq'}
 
 if ARGV.size < 1
   print USAGE
@@ -31,11 +37,18 @@ if ARGV.size < 1
 end
 ARGV.each do | fn |
   raise "File #{fn} does not exist" if !File.exist?(fn)
-  Bio::FlatFile.auto(fn).each do | item |
-    seq = Sequence::NA.new(item.data)
-    aa = seq.translate
-    print "> ",item.definition,"\n"
-    print aa.seq,"\n"
-  end
+  p fn
+
+  # import bio._
+  dna = Seq.new("agctaacga")
+  # dna.translate.mkString should equal ("S*R")
+
+
+  # Bio::FlatFile.auto(fn).each do | item |
+  #   seq = Sequence::NA.new(item.data)
+  #   aa = seq.translate
+  #   print "> ",item.definition,"\n"
+  #   print aa.seq,"\n"
+  # end
 end
 

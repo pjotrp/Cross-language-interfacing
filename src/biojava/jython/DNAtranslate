@@ -1,0 +1,27 @@
+#! /bin/sh
+#
+# This script invokes Jython for translating a FASTA file
+# using the Biojava3 implementation
+#
+# Usage:
+#
+#   ./DNAtranslate file.fa [n]
+#
+# Example
+#
+#   ./DNAtranslate ../../../test/data/test-dna.fa
+#
+# Dependencies: scala jre 
+# Included:     bioscala biojava3
+#   
+
+# /usr/share/java/jboss-profiler.jar
+
+src=`dirname $0`
+# javaopts="-Xmx128M -Xms16M -Xss16M -javaagent:lib/jboss-profiler-2.0.0.Beta5/jboss-profiler.jar -Djboss-profiler.properties=jboss-profiler.properties"
+javaopts="-Xmx128M -Xms16M -Xss16M"
+export CLASSPATH=../scala/$src/lib/biojava/biojava3-core-3.0-SNAPSHOT.jar
+
+# lib/scala/biojava-1.7.1.jar
+env JAVA_OPTS="$javaopts" jython DNAtranslate.jpy $*
+

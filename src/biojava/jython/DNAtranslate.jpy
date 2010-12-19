@@ -1,0 +1,30 @@
+
+import org.biojava3.core.sequence.transcription.TranscriptionEngine as TranscriptionEngine
+import org.biojava3.core.sequence as Sequence
+
+import sys
+from Bio.Seq import Seq
+from Bio import SeqIO
+from Bio.Alphabet import generic_dna
+
+verbose=False
+
+fn = sys.argv[1]
+times = 1
+if len(sys.argv) > 2:
+  times = int(sys.argv[2])
+
+transcriber = TranscriptionEngine.getDefault()
+
+if verbose:
+  print >> sys.stderr, 'Biopython translate ',fn, ':', times
+for i in range(0, times):
+  if verbose:
+    print >> sys.stderr, i+1
+  for seq_record in SeqIO.parse(fn, "fasta", generic_dna):
+    print seq_record.id
+    print seq_record.seq.translate()
+    dna = Sequence.DNASequence("atgtcaatggtaagaaatgtatcaaatcagagcgaaaaattggaaattttgt")
+    rna = dna.getRNASequence(transcriber)
+    print rna.getProteinSequence(transcriber)
+
