@@ -23,6 +23,10 @@ Install R's GeneR library and BioLib
 
   ./scripts/install-packages.sh
 
+As root install a number of packages
+
+  su -c ./scripts/install-packages-root.sh
+
 == Running the RPy2 tests ==
 
   export R_LIBS=$HOME/R_libs
