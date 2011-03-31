@@ -1,0 +1,36 @@
+= Cross language interfacing =
+
+This document explains how to run the cross-language interface tests.
+The easiest route is to run these scripts on a ready BioNode VM. To
+install and run BioNode see the BioNode [http://biobeat.org/bionode/ 
+documentation] online.
+
+== Install ==
+
+First fetch the source code repository from github
+
+  guest@bionode32-0:~$ git clone http://github.com/pjotrp/Cross-language-interfacing.git
+
+Generate the test data
+
+  cd Cross-language-interfacing
+  ./scripts/create_test_files.rb
+    Writing /tmp/test-dna-50.fa...
+    Writing /tmp/test-dna-100.fa...
+    (etc.)
+
+Install R's GeneR library and BioLib
+
+  ./scripts/install-packages.sh
+
+== Running the RPy2 tests ==
+
+  export R_LIBS=$HOME/R_libs
+  time python src/RS/RPy2/DNAtranslate_RPy2.py /tmp/test-dna-100.fa 
+    > B0035.6
+    MVENKSSYELPDQKTLDMNKEWVQELEDIFYSYKKYDVNKVRVQQFLDRRSDFLVYDFYTSNLSMDAMQYFQAGVTQKDVGLSKDYILLMRKLYSMLTEPSKQFFQEQFVKEWQYHEIDYTPYFETLVPRFREKIARLLDEIVKNPEEVDDDVQEELRWHLLFSPVTTLLDIFTRCLKNFEIT
+    (etc. etc.)
+    real    0m0.926s
+    user    0m0.560s
+    sys     0m0.372s
+

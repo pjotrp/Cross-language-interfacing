@@ -5,6 +5,11 @@ testname=$1
 if [ $testname == "--short" ]; then
   quick=true
   testname=$2
+  shift
+fi
+if [ $testname == "--commands" ]; then
+  showcmd=true
+  testname=$2
 fi
 
 killall RSOAPManager
@@ -24,13 +29,17 @@ function runtest {
     for testsize in $testsizes ; do
       testfn=/tmp/test-dna-${testsize}.fa
       fullcmd="$cmd"
-      # Dummy run
-      $fullcmd $testfn > /dev/null
-      for x in $repeat ; do 
-        echo -en "=\t$short\t$testsize\t"
-        # var=$(time (echo 1 > /dev/null ) 2>&1 )
-        $timer $fullcmd 2>&1 $testfn > /dev/null 
-      done
+      if [ ! -z $showcmd ]; then
+        echo $timer $fullcmd $testfn
+      else
+        # Dummy run
+        $fullcmd $testfn > /dev/null
+        for x in $repeat ; do 
+          echo -en "=\t$short\t$testsize\t"
+          # var=$(time (echo 1 > /dev/null ) 2>&1 )
+          $timer $fullcmd 2>&1 $testfn > /dev/null 
+        done
+      fi
     done
   fi
 }
@@ -43,10 +52,15 @@ function runRtest {
       dpkg-query -W $pkg
     done
     # fill OS buffers
-    for testsize in $testsizes ; do
-      testfn=/tmp/test-dna-${testsize}.fa
-      echo "/usr/bin/time -f %e env BATCH_VARS="$testfn" R -q --no-save --no-restore --no-readline --slave < $cmd > /dev/null"
-    done
+    fullcmd="/usr/bin/time -f %e env BATCH_VARS="$testfn" R -q --no-save --no-restore --no-readline --slave < $cmd > /dev/null"
+    if [ ! -z $showcmd ]; then
+      echo $fullcmd
+    else
+      for testsize in $testsizes ; do
+        testfn=/tmp/test-dna-${testsize}.fa
+        echo "/usr/bin/time -f %e env BATCH_VARS="$testfn" R -q --no-save --no-restore --no-readline --slave < $cmd > /dev/null"
+      done
+    fi
   fi
 
 }
