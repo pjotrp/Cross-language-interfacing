@@ -3,10 +3,10 @@
 # This script installs packages for running the tests (on BioNode)
 # Some of this should find its way into Debian proper.
 
-apt-get install r-cran-rserve python python-rpy2 python-biopython \
+apt-get install r-cran-rserve python-dev python-rpy2 python-biopython \
     python-rpy r-base r-cran-rserve r-cran-rjava default-jdk \
     perl bioperl ruby1.9.1 libbio-ruby python-setuptools scala \
-    jython
+    jython cmake swig
 
 # Python packages
 easy_install pyRserve
@@ -28,4 +28,11 @@ python setup.py install
 cd /var/packages
 wget http://cran.r-project.org/src/contrib/session_1.0.2.tar.gz
 R CMD INSTALL session_1.0.2.tar.gz 
+
+# BioLib
+
+cd /var/packages
+git clone git://github.com/pjotrp/biolib.git
+cd biolib
+./configure --with-emboss --with-python
 
