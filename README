@@ -1,4 +1,9 @@
-Scripts for testing cross-language interfacing (primarily to R). These scripts
-are published under the BSD License.
+Scripts for testing cross-language interfacing (primarily to R). These
+scripts are published under the BSD License.
+
+See the document in ./doc for more information on running these
+scripts.
+
+The project web page is at http://biobeat.org/bioprojects.
 
 Copyright (C) 2010,2011 Pjotr Prins <pjotr.prins@thebird.nl> 

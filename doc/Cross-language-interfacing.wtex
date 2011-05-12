@@ -7,9 +7,13 @@ documentation] online.
 
 == Install ==
 
-First fetch the source code repository from github
+Fetch the source code repository from github
 
   guest@bionode32-0:~$ git clone http://github.com/pjotrp/Cross-language-interfacing.git
+
+As root install a number of packages (Debian)
+
+  su -c ./scripts/install-packages-root.sh
 
 Generate the test data
 
@@ -19,13 +23,9 @@ Generate the test data
     Writing /tmp/test-dna-100.fa...
     (etc.)
 
-Install R's GeneR library and BioLib
+Install/upgrade R's GeneR library and BioLib
 
   ./scripts/install-packages.sh
-
-As root install a number of packages
-
-  su -c ./scripts/install-packages-root.sh
 
 == Running the RPy2 tests ==
 
@@ -38,3 +38,5 @@ As root install a number of packages
     user    0m0.560s
     sys     0m0.372s
 
+If this works, check out the tests in ./scripts/run_test.sh, which
+should contain the latest instructions.
