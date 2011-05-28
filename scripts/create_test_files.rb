@@ -13,6 +13,16 @@ targetdir = '/tmp'
 basedir = File.dirname(__FILE__)+'/..'
 inputfn = basedir + '/test/data/test-dna.fa'
 
+list = [50, 100, 200, 500, 1000, 5000, 15000, 24652]
+
+ok = nil
+list.each do | maxsize |
+  targetfn = targetdir + "/test-dna-#{maxsize}.fa"
+  ok = File.exist?(targetfn)
+  break if not ok
+end
+exit 0 if ok
+
 recs = []
 Bio::FlatFile.auto(inputfn).each do | item |
   seq = Sequence::NA.new(item.data)
@@ -22,7 +32,7 @@ end
 
 
 # Create files of 50, 100, 200, 500, 1000, 5000, 15000 and 24652 recs
-[50, 100, 200, 500, 1000, 5000, 15000, 24652].each do | maxsize |
+list.each do | maxsize |
   targetfn = targetdir + "/test-dna-#{maxsize}.fa"
   print "\nWriting #{targetfn}..."
   count = 0
