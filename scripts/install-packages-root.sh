@@ -14,7 +14,7 @@ easy_install SOAPpy
 easy_install session
 
 # bioruby for Ruby 1.9
-gem1.9.1 install bio  
+gem1.9.1 install --no-rdoc --no-ri bio  
 
 # build RSOAP
 mkdir /var/packages
@@ -32,7 +32,11 @@ R CMD INSTALL session_1.0.2.tar.gz
 # BioLib
 
 cd /var/packages
-git clone git://github.com/pjotrp/biolib.git
-cd biolib
-./configure --with-emboss --with-python
+if [ ! -d biolib ]; then
+  git clone git://github.com/pjotrp/biolib.git
+  cd biolib
+  ./configure --with-python --with-emboss 
+  make
+  make install
+fi
 
