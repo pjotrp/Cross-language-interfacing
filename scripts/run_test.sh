@@ -2,6 +2,11 @@
 #
 
 testname=$1
+if [ $testname == "--once" ]; then
+  quick=1
+  testname=$2
+  shift
+fi
 if [ $testname == "--short" ]; then
   quick=true
   testname=$2
@@ -67,7 +72,11 @@ function runRtest {
 
 timer="/usr/bin/time -f %e"
 if [ ! -z $quick ] ; then
-  testsizes="50 100 200 500 1000 5000"
+  if [ $quick == "1" ]; then
+    testsizes="50"
+  else
+    testsizes="50 100 200 500 1000 5000"
+  fi
   repeat="1"
 else
   testsizes="50 100 200 500 1000 5000 15000 24652"
