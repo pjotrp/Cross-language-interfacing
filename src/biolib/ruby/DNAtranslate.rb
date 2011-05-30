@@ -1,4 +1,4 @@
-#! /usr/bin/ruby
+#! /usr/local/bin/ruby
 #
 # Sequence translation using the bigbio FastaReader and EMBOSS 
 # translation (Biolib).

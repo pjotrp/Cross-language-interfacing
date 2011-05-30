@@ -10,11 +10,8 @@
 
 fasta = '../../test/data/test-dna.fa'
 
-args<-strsplit(Sys.getenv('BATCH_VARS'),' ')
-fasta = args$BATCH_VARS[1]
-times = as.integer(args$BATCH_VARS[2])
-
-if (is.na(times)) { times = 1 }
+fasta = Sys.getenv('BATCH_VARS')
+times = 1
 
 library(GeneR)
 idx = indexFasta(fasta)

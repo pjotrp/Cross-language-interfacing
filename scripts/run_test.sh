@@ -2,17 +2,17 @@
 #
 
 testname=$1
-if [ $testname == "--once" ]; then
+if [ "$testname" == "--once" ]; then
   quick=1
   testname=$2
   shift
 fi
-if [ $testname == "--short" ]; then
+if [ "$testname" == "--short" ]; then
   quick=true
   testname=$2
   shift
 fi
-if [ $testname == "--commands" ]; then
+if [ "$testname" == "--commands" ]; then
   showcmd=true
   testname=$2
 fi
@@ -128,7 +128,7 @@ pkgs=""
 short="BioJava"
 descr="BioJava+BioScala"
 cmd="./src/biojava/scala/DNAtranslate"
-runtest
+# runtest - broken now
 pkgs=""
 short="Jython+BioJava"
 descr="BioJava+jython"
