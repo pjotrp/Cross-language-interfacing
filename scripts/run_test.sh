@@ -109,11 +109,11 @@ short="Biopython"
 descr="Biopython"
 cmd="python src/biopython/DNAtranslate.py"
 runtest
-pkgs="ruby1.9.1 libbio-ruby"
-short="BioRuby"
-descr="BioRuby"
-cmd="ruby1.9.1 -I ~/opt/ruby/bioruby/lib/ src/bioruby/DNAtranslate.rb"
-runtest
+# pkgs="ruby1.9.1 libbio-ruby"
+# short="BioRuby"
+# xxscr="BioRuby"
+# cmd="ruby1.9.1 -I ~/opt/ruby/bioruby/lib/ src/bioruby/DNAtranslate.rb"
+# runtest
 pkgs="r-base"
 short="R+Biostrings"
 descr=$short

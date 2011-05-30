@@ -20,8 +20,7 @@
 src=`dirname $0`
 # javaopts="-Xmx128M -Xms16M -Xss16M -javaagent:lib/jboss-profiler-2.0.0.Beta5/jboss-profiler.jar -Djboss-profiler.properties=jboss-profiler.properties"
 javaopts="-Xmx128M -Xms16M -Xss16M"
-export CLASSPATH=../scala/$src/lib/biojava/biojava3-core-3.0-SNAPSHOT.jar
-
+export CLASSPATH=../scala/lib/biojava/biojava3-core-3.0-SNAPSHOT.jar
 # lib/scala/biojava-1.7.1.jar
 env JAVA_OPTS="$javaopts" jython DNAtranslate.jpy $*
 
