@@ -22,4 +22,4 @@ javaopts="-Xmx128M -Xms16M -Xss16M"
 export CLASSPATH=../scala/lib/biojava/biojava3-core-3.0-SNAPSHOT.jar
 # env JAVA_OPTS="$javaopts" jython DNAtranslate.jpy $*
 
-env JYTHONPATH=./lib/biojava3-core-3.0-alpha1.jar jython  DNATranslate.py $*
+env JYTHONPATH=$src/lib/biojava3-core-3.0-alpha1.jar jython DNATranslate.py $*

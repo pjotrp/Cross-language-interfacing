@@ -6,6 +6,7 @@ class ScalaBioJavaProject(info: ProjectInfo) extends DefaultProject(info)
   println("** HELLO")
   System.err.println("** HELLO")
   override def unmanagedClasspath = super.unmanagedClasspath +++ 
+    ("lib" ) +++
     ("lib" / "bioscala" ) +++
     ("lib" / "scala" ) +++
     ("lib" / "biojava" ) 

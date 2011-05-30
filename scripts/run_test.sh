@@ -130,6 +130,27 @@ descr="BioJava+BioScala"
 cmd="./src/biojava/scala/DNAtranslate"
 runtest
 pkgs=""
+short="Jython+BioJava"
+descr="BioJava+jython"
+cd src/biojava/jython
+cmd="./DNAtranslate"
+runtest
+cd ../../..
+pkgs=""
+short="Jruby+BioJava"
+descr="BioJava+jruby"
+cd src/biojava/jruby
+cmd="./DNAtranslate.rb"
+runtest
+cd ../../..
+pkgs="ant"
+short="Java special"
+descr="Java2"
+cd src/biojava/java
+cmd="java -Xms128M -Xmx384M javaa.Main -v"
+runtest
+cd ../../..
+pkgs=""
 short="biolib+ruby"
 descr="Ruby+BigBio+Biolib/EMBOSS"
 cd src/biolib/ruby
