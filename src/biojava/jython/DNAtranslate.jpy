@@ -1,3 +1,4 @@
+# This one uses a mixture of BioPython and BioJava3
 
 import org.biojava3.core.sequence.transcription.TranscriptionEngine as TranscriptionEngine
 import org.biojava3.core.sequence as Sequence
