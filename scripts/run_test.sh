@@ -63,7 +63,8 @@ function runRtest {
     else
       for testsize in $testsizes ; do
         testfn=/tmp/test-dna-${testsize}.fa
-        echo "/usr/bin/time -f %e env BATCH_VARS="$testfn" R -q --no-save --no-restore --no-readline --slave < $cmd > /dev/null"
+        # echo "/usr/bin/time -f %e env BATCH_VARS="$testfn" R -q --no-save --no-restore --no-readline --slave < $cmd > /dev/null"
+        $timer env BATCH_VARS="$testfn" R -q --no-save --no-restore --no-readline --slave < $cmd > /dev/null
       done
     fi
   fi
@@ -75,12 +76,12 @@ if [ ! -z $quick ] ; then
   if [ $quick == "1" ]; then
     testsizes="50"
   else
-    testsizes="50 100 200 500 1000 5000"
+    testsizes="100 500 1000"
   fi
   repeat="1"
 else
   testsizes="50 100 200 500 1000 5000 15000 24652"
-  repeat="1 2 3"
+  repeat="1"
 fi
 
 cat /proc/version
