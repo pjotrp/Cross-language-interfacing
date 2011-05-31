@@ -13,11 +13,11 @@ Python+RSOAP	1000 12.24
 Python+RSOAP	5000 46.78
 Python+RSOAP	15000 131.59
 Python+RSOAP	24652	214.19
-Bioperl	500	0.94
-Bioperl	1000	1.59
-Bioperl	5000	7.26
-Bioperl	15000	21.02
-Bioperl	24652	34.32
+BioPerl	500	0.94
+BioPerl	1000	1.59
+BioPerl	5000	7.26
+BioPerl	15000	21.02
+BioPerl	24652	34.32
 Biopython	500	0.98
 Biopython	1000	1.62
 Biopython	5000	6.88
@@ -38,26 +38,26 @@ Jython+BioJava	1000	10.80
 Jython+BioJava	5000	14.47
 Jython+BioJava	15000	27.91
 Jython+BioJava	24652	40.01
-Jruby+BioJava	500	2.46
-Jruby+BioJava	1000	3.31
-Jruby+BioJava	5000	10.05
-Jruby+BioJava	15000	26.07
-Jruby+BioJava	24652	42.00
+JRuby+BioJava	500	2.46
+JRuby+BioJava	1000	3.31
+JRuby+BioJava	5000	10.05
+JRuby+BioJava	15000	26.07
+JRuby+BioJava	24652	42.00
 Java special	500	1.61
 Java special	1000	2.05
 Java special	5000	4.71
 Java special	15000	9.79
 Java special	24652	15.25
-biolib+ruby	500	0.09
-biolib+ruby	1000	0.14
-biolib+ruby	5000	0.64
-biolib+ruby	15000	1.74
-biolib+ruby	24652	2.94
-biolib+python	500	0.33
-biolib+python	1000	0.37
-biolib+python	5000	0.70
-biolib+python	15000	1.59
-biolib+python	24652	2.35
+Ruby+BioLib	500	0.09
+Ruby+BioLib	1000	0.14
+Ruby+BioLib	5000	0.64
+Ruby+BioLib	15000	1.74
+Ruby+BioLib	24652	2.94
+Python+BioLib	500	0.33
+Python+BioLib	1000	0.37
+Python+BioLib	5000	0.70
+Python+BioLib	15000	1.59
+Python+BioLib	24652	2.35
 BioRuby	500	0.99
 BioRuby	1000	1.56
 BioRuby	5000	6.30
