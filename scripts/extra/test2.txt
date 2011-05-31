@@ -1,0 +1,75 @@
+RPy2	500	1.18
+RPy2	1000	1.33
+RPy2	5000	2.35
+RPy2	15000	5.00
+RPy2	24652	7.59
+Python+Rserve	500	
+2.48
+Python+Rserve	1000	
+3.08
+Python+Rserve	5000	
+8.00
+Python+Rserve	15000	
+20.77
+Python+Rserve	24652	
+32.14
+Python+RSOAP	500	RSOAPManager: no process found
+7.31
+Python+RSOAP	1000	RSOAPManager: no process found
+12.24
+Python+RSOAP	5000	RSOAPManager: no process found
+46.78
+Python+RSOAP	15000	RSOAPManager: no process found
+131.59
+Python+RSOAP	24652	/usr/local/lib/python2.6/dist-packages/RSOAP/RProcess.py:70: RuntimeWarning: tempnam is a potential security risk to your program
+214.19
+Bioperl	500	0.94
+Bioperl	1000	1.59
+Bioperl	5000	7.26
+Bioperl	15000	21.02
+Bioperl	24652	34.32
+Biopython	500	0.98
+Biopython	1000	1.62
+Biopython	5000	6.88
+Biopython	15000	19.62
+Biopython	24652	32.57
+R+Biostrings	500	7.68
+R+Biostrings	1000	8.25
+R+Biostrings	5000	13.50
+R+Biostrings	15000	26.90
+R+Biostrings	24652	39.63
+R+GeneR	500	1.75
+R+GeneR	1000	2.99
+R+GeneR	5000	12.43
+R+GeneR	15000	37.13
+R+GeneR	24652	62.61
+Jython+BioJava	500	10.10
+Jython+BioJava	1000	10.80
+Jython+BioJava	5000	14.47
+Jython+BioJava	15000	27.91
+Jython+BioJava	24652	40.01
+Jruby+BioJava	500	2.46
+Jruby+BioJava	1000	3.31
+Jruby+BioJava	5000	10.05
+Jruby+BioJava	15000	26.07
+Jruby+BioJava	24652	42.00
+Java special	500	1.61
+Java special	1000	2.05
+Java special	5000	4.71
+Java special	15000	9.79
+Java special	24652	15.25
+biolib+ruby	500	0.09
+biolib+ruby	1000	0.14
+biolib+ruby	5000	0.64
+biolib+ruby	15000	1.74
+biolib+ruby	24652	2.94
+biolib+python	500	0.33
+biolib+python	1000	0.37
+biolib+python	5000	0.70
+biolib+python	15000	1.59
+biolib+python	24652	2.35
+BioRuby	500	0.99
+BioRuby	1000	1.56
+BioRuby	5000	6.30
+BioRuby	15000	18.15
+BioRuby	24652	29.93
