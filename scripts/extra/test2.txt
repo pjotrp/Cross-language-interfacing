@@ -3,26 +3,16 @@ RPy2	1000	1.33
 RPy2	5000	2.35
 RPy2	15000	5.00
 RPy2	24652	7.59
-Python+Rserve	500	
-2.48
-Python+Rserve	1000	
-3.08
-Python+Rserve	5000	
-8.00
-Python+Rserve	15000	
-20.77
-Python+Rserve	24652	
-32.14
-Python+RSOAP	500	RSOAPManager: no process found
-7.31
-Python+RSOAP	1000	RSOAPManager: no process found
-12.24
-Python+RSOAP	5000	RSOAPManager: no process found
-46.78
-Python+RSOAP	15000	RSOAPManager: no process found
-131.59
-Python+RSOAP	24652	/usr/local/lib/python2.6/dist-packages/RSOAP/RProcess.py:70: RuntimeWarning: tempnam is a potential security risk to your program
-214.19
+Python+Rserve	500	2.48
+Python+Rserve	1000	3.08
+Python+Rserve	5000	8.00
+Python+Rserve	15000	20.77
+Python+Rserve	24652	32.14
+Python+RSOAP	500 7.31
+Python+RSOAP	1000 12.24
+Python+RSOAP	5000 46.78
+Python+RSOAP	15000 131.59
+Python+RSOAP	24652	214.19
 Bioperl	500	0.94
 Bioperl	1000	1.59
 Bioperl	5000	7.26
