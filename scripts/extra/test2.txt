@@ -43,11 +43,11 @@ JRuby+BioJava	1000	3.31
 JRuby+BioJava	5000	10.05
 JRuby+BioJava	15000	26.07
 JRuby+BioJava	24652	42.00
-Java special	500	1.61
-Java special	1000	2.05
-Java special	5000	4.71
-Java special	15000	9.79
-Java special	24652	15.25
+Java	500	1.61
+Java	1000	2.05
+Java	5000	4.71
+Java	15000	9.79
+Java	24652	15.25
 Ruby+BioLib	500	0.09
 Ruby+BioLib	1000	0.14
 Ruby+BioLib	5000	0.64
