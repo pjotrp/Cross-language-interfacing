@@ -26,17 +26,18 @@ print list
 names,dummy = zip(*list)
 print names
 
-ptypes = [ 'r', 'g', 'b', 'c', 'm', 'y:', 'r--', 'g--', 'b--', 'c--', 'm--', 'y--' ] 
+ptypes = [ 'r', 'g', 'b', 'c', 'm', 'y--', 'r--', 'g:', 'b--', 'c--', 'm--', 'g:', 'r:' ]
+marker = [ '^', 'o', 's', 's', 'o', 'o', 'o', '^', 'o', 'o', 's', 's', 's', 's' ]
 
 i = 0
 for n in names:
-  # print n,max,ptypes[i]
+  print n,max,ptypes[i]
   xs, ys = zip(*d[n])
   print ys
-  plot(xs,ys,ptypes[i],label=n, linewidth=2, marker='o')
+  plot(xs,ys,ptypes[i],label=n, linewidth=2, marker=marker[i])
   i = i+1
 
-# xlim(45,510)
+xlim(800,25000)
 ylim(-0.1,120)
 # vlines(xs, ymin, ymax, color='k', linestyles='solid')
 
@@ -45,7 +46,8 @@ xlabel('sequences')
 
 legend(names, 'upper left', shadow=True)
 
-title('Translate DNA sequences to protein (lower is better)')
+title('Translate mRNA sequences to protein (lower is better)')
+
 
 # sys.exit()
 show()
