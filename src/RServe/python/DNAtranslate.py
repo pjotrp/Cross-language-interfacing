@@ -3,16 +3,17 @@
 #
 # Usage:
 #
-#   python DNAtranslate.py dna.fa [n]
+#   python3 DNAtranslate.py dna.fa [n]
 #
 # Example:
 #
-#   python DNAtranslate.py ../../../test/data/test-dna.fa
+#   time python3 DNAtranslate.py ../../../test/data/test-dna.fa
 #
 
 verbose=False
 
 import sys
+import os
 import time
 from Bio.Seq import Seq
 from Bio import SeqIO
@@ -27,21 +28,21 @@ if len(sys.argv) > 2:
   times = int(sys.argv[2])
 
 # Start the RServer
-subprocess.Popen([r"R","CMD", "Rserve"], stdout=subprocess.PIPE).wait()
+os.system("R -q --no-save --no-restore --no-readline --slave < Rserve.R")
 
 time.sleep(0.5)
-conn = pyRserve.rconnect()
-conn('library(GeneR)')
+conn = pyRserve.connect()
+conn.eval('library(GeneR)')
 
 if verbose:
-  print >> sys.stderr, 'Biopython translate ',fn, ':', times
+  sys.stderr.write( 'Biopython translate ',fn, ':', times )
 for i in range(0, times):
   if verbose:
-    print >> sys.stderr, i+1
+    sys.stderr.write(i+1)
   for seq_record in SeqIO.parse(fn, "fasta", generic_dna):
-    print ">",seq_record.id
+    print(">",seq_record.id)
     ntseq = str(seq_record.seq)
-    print conn('strTranslate("'+ntseq+'")')
+    print(conn.eval('strTranslate("'+ntseq+'")'))
 
 # Kill the RServer
-subprocess.Popen([r"killall", "Rserve"], stdout=subprocess.PIPE)
+subprocess.Popen([r"pkill", "Rserve"], stdout=subprocess.PIPE)
