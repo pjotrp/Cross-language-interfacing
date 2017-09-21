@@ -6,7 +6,7 @@
 #
 # Example:
 #
-#   time  env BATCH_VARS="../../test/data/test-dna.fa 2" R -q --no-save --no-restore --no-readline --slave < DNAtranslate_Biostrings.R 
+#   time  env BATCH_VARS="../../test/data/test-dna.fa" R -q --no-save --no-restore --no-readline --slave < DNAtranslate_Biostrings.R
 
 fasta = '../../test/data/test-dna.fa'
 
@@ -16,13 +16,12 @@ times = 1
 library(GeneR)
 library(Biostrings)
 
+ff = readDNAStringSet(fasta) # note we read all in RAM
+
 for (i in 1:times) {
-  myseq1 <- readFASTA(fasta, strip.descs=T) 
-  myseq2 <- lapply(myseq1, function(x) x$seq)
-  n = 0
-  for (ntseq in myseq2) {
+  for (n in 1:length(ff)) {
+    ntseq = toString(ff[n])
     aaseq = strTranslate(ntseq)
     cat(">(",n,")\n",aaseq,"\n",sep="")
-    n = n+1
   }
 }
