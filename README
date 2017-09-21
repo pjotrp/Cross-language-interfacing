@@ -1,9 +1,27 @@
-Scripts for testing cross-language interfacing (primarily to R). These
-scripts are published under the BSD License.
+Scripts for testing cross-language interfacing (primarily to R) as part
+of a new 2018 edition of 'Evolutionary Genomics':
+
+Genetical Genomics for Evolutionary Studies by Pjotr Prins Geert Smant
+and Ritsert C. Jansen, chapter 19 in Evolutionary Genomics:
+statistical and computational methods, ed. Anisimova M. within
+Meth. Mol. Biol. Series of Humana-Springer 2012
+
+Sharing programming resources between Bio* projects through remote
+procedure call and native call stack strategies, by Pjotr Prins,
+Naohisa Goto, Andrew Yates, Laurent Gautier, Scooter Willis,
+Christopher Fields and Toshiaki Katayama, chapter 21 in Evolutionary
+Genomics: statistical and computational methods, ed. Anisimova
+M. within Meth. Mol. Biol. Series of Humana-Springer 2012
+
+Scalable Computing for Evolutionary Genomics by Pjotr Prins, Dominique
+Belhachemi, Steffen MÃ¶ller and Geert Smant, chapter 22 in
+Evolutionary Genomics: statistical and computational methods,
+ed. Anisimova M. within Meth. Mol. Biol. Series of Humana-Springer
+2012
 
 See the document in ./doc for more information on running these
 scripts.
 
-The project web page is at http://biobeat.org/bioprojects.
+These scripts are published under the BSD License.
 
-Copyright (C) 2010,2011 Pjotr Prins <pjotr.prins@thebird.nl> 
+Copyright (C) 2010,2011,2017 Pjotr Prins <pjotr.prins@thebird.nl>
