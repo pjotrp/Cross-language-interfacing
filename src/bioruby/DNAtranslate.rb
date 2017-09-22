@@ -1,4 +1,4 @@
-#! /usr/bin/ruby
+#! /usr/bin/env ruby
 #
 # Sequence translation using the BioRuby (pure Ruby)
 #
@@ -8,9 +8,13 @@
 #
 # Example
 #
-#   ./DNAtranslate.rb ../../../test/data/test-dna.fa
+#   time ./DNAtranslate.rb ../../test/data/test-dna.fa
 #
 # Dependencies: ruby bioruby bigbio biolib
+#
+# To use JRuby use something like
+#
+#   time /opt/jre1.8.0_144/bin/java -jar ~/opt/jars/jruby-complete-9.1.13.0.jar DNAtranslate.rb ../../test/data/test-dna.fa
 #
 # To use Ruby 1.9 (which is twice as fast as 1.8) use something like
 #
@@ -38,4 +42,3 @@ ARGV.each do | fn |
     print aa.seq,"\n"
   end
 end
-

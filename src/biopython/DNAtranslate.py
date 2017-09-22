@@ -3,11 +3,11 @@
 #
 # Usage:
 #
-#   python DNAtranslate.py dna.fa [n]
+#   python3 DNAtranslate.py dna.fa [n]
 #
 # Example
 #
-#   python DNAtranslate.py ../../test/data/test-dna.fa
+#   time python3 DNAtranslate.py ../../test/data/test-dna.fa
 #
 # Dependencies: python biopython
 
@@ -24,10 +24,10 @@ if len(sys.argv) > 2:
   times = int(sys.argv[2])
 
 if verbose:
-  print >> sys.stderr, 'Biopython translate ',fn, ':', times
+  sys.stderr.write('Biopython translate ',fn, ':', times)
 for i in range(0, times):
   if verbose:
-    print >> sys.stderr, i+1
+    sys.stderr.write( i+1 )
   for seq_record in SeqIO.parse(fn, "fasta", generic_dna):
-    print seq_record.id
-    print seq_record.seq.translate()
+    print(">",seq_record.id)
+    print(seq_record.seq.translate())
