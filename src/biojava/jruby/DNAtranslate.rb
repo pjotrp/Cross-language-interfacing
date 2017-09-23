@@ -1,6 +1,6 @@
 #! /usr/bin/jruby
 #
-# Sequence translation using BioJava3 
+# Sequence translation using BioJava3
 #
 # Usage:
 #
@@ -9,6 +9,10 @@
 # Example
 #
 #   ./DNAtranslate.rb ../../../test/data/test-dna.fa
+#
+# or
+#
+#   time /opt/jre1.8.0_144/bin/java -jar ~/opt/jars/jruby-complete-9.1.13.0.jar DNAtranslate.rb ../../../test/data/test-dna.fa
 #
 # Dependencies: ruby bioruby bigbio biolib
 #
@@ -32,10 +36,9 @@ ARGV.each do | fn |
   raise "File #{fn} does not exist" if !File.exist?(fn)
   f = java.io.File.new(fn)
   dnas = org.biojava3.core.sequence.io.FastaReaderHelper.readFastaDNASequence(f)
-  
+
   for dna in dnas.values()
     ps = dna.getRNASequence().getProteinSequence()
     print ps,"\n"
   end
 end
-

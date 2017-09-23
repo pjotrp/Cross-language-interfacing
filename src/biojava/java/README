@@ -4,6 +4,8 @@
 
 ant jar 
 
+env JAVA_HOME=/gnu/store/0r0ax111rkvjvz8b0za8ladk2fan9pky-icedtea-3.5.1-jdk/ /opt/apache-ant-1.9.9/bin/ant jar
+
 #Bring in CLASSPATH
 . setup.env
 
@@ -11,6 +13,8 @@ To Run Normal Translation
 #########################
 
 java -Xms128M -Xmx384M javaa.Main -v ../../../test/data/test-dna.fa
+
+time /opt/jre1.8.0_144/bin/java -Xms128M -Xmx384M javaa.Main -v ../../../test/data/test-dna.fa
 
 To Run REST Server
 ##################
