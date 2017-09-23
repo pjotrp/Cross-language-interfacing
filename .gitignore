@@ -1,2 +1,6 @@
 *.ix
 /*.txt
+*.pep
+*.jar
+build/
+dist/
