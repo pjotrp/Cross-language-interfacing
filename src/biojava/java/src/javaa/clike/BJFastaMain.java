@@ -11,12 +11,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import javaa.Args;
-import org.biojava3.core.sequence.DNASequence;
-import org.biojava3.core.sequence.compound.AminoAcidCompoundSet;
-import org.biojava3.core.sequence.compound.RNACompoundSet;
-import org.biojava3.core.sequence.io.FastaReaderHelper;
-import org.biojava3.core.sequence.io.IUPACParser;
-import org.biojava3.core.sequence.io.IUPACParser.IUPACTable;
+import org.biojava.nbio.core.sequence.DNASequence;
+import org.biojava.nbio.core.sequence.compound.AminoAcidCompoundSet;
+import org.biojava.nbio.core.sequence.compound.RNACompoundSet;
+import org.biojava.nbio.core.sequence.io.FastaReaderHelper;
+import org.biojava.nbio.core.sequence.io.IUPACParser;
+import org.biojava.nbio.core.sequence.io.IUPACParser.IUPACTable;
 
 /**
  *

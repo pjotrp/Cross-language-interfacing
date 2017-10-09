@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.Map;
-import org.biojava3.core.sequence.DNASequence;
-import org.biojava3.core.sequence.ProteinSequence;
-import org.biojava3.core.sequence.io.FastaReaderHelper;
-import org.biojava3.core.sequence.template.SequenceMixin;
+import org.biojava.nbio.core.sequence.DNASequence;
+import org.biojava.nbio.core.sequence.ProteinSequence;
+import org.biojava.nbio.core.sequence.io.FastaReaderHelper;
+import org.biojava.nbio.core.sequence.template.SequenceMixin;
 
 /**
  * Basic program used for translating sequences

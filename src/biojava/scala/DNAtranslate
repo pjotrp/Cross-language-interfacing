@@ -12,17 +12,18 @@
 #   ./DNAtranslate ../../../test/data/test-dna.fa
 #
 # Dependencies: scala jre 
-# Included:     bioscala biojava3
+# Included:     bioscala biojava4 slf4jll
 #   
 
 # /usr/share/java/jboss-profiler.jar
 
 src=`dirname $0`
 # javaopts="-Xmx128M -Xms16M -Xss16M -javaagent:lib/jboss-profiler-2.0.0.Beta5/jboss-profiler.jar -Djboss-profiler.properties=jboss-profiler.properties"
-javaopts="-Xmx128M -Xms16M -Xss16M"
+# javaopts="-Xmx128M -Xms16M -Xss16M"
+javaopts=""
 
 # lib/scala/biojava-1.7.1.jar
 # env JAVA_OPTS="$javaopts" scala -cp $src/target/scala_2.7.7/classes/:$src/lib/bioscala:$src/lib/biojava/biojava3-core-3.0-SNAPSHOT.jar:$src/lib/biojava/biojava3-genome-3.0-SNAPSHOT.jar:$src/lib/jboss-profiler-2.0.0.Beta5/jboss-profiler.jar:$src/lib/jboss-profiler-2.0.0.Beta5/log4j.jar:src/lib/jboss-profiler-2.0.0.Beta5/ TranslateApp $*
 
-env JAVA_OPTS="$javaopts" scala -cp lib:../jython/lib/biojava3-core-3.0-alpha1.jar:$src/target/scala_2.7.7/classes/ TranslateApp $*
+env JAVA_OPTS="$javaopts" scala -cp lib:../jython/lib/biojava-core-4.2.8.jar:../jython/lib/slf4j-api-1.7.25.jar:$src/target/scala-2.12/classes/ TranslateApp $*
 

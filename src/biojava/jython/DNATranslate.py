@@ -1,6 +1,6 @@
 # Pure BioJava invocation from JPython
 
-import org.biojava3.core.sequence.io.FastaReaderHelper as help
+import org.biojava.nbio.core.sequence.io.FastaReaderHelper as help
 import java.io.File as file
 import sys
 
