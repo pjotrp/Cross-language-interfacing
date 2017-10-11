@@ -5,10 +5,11 @@
 
 package javaa;
 
-import org.biojava3.core.sequence.DNASequence;
-import org.biojava3.core.sequence.ProteinSequence;
-import org.biojava3.core.sequence.RNASequence;
-import org.biojava3.core.sequence.transcription.TranscriptionEngine;
+import org.biojava.nbio.core.exceptions.CompoundNotFoundException;
+import org.biojava.nbio.core.sequence.DNASequence;
+import org.biojava.nbio.core.sequence.ProteinSequence;
+import org.biojava.nbio.core.sequence.RNASequence;
+import org.biojava.nbio.core.sequence.transcription.TranscriptionEngine;
 
 /**
  * Contains the logic for translation so all implementations will use the
@@ -27,7 +28,12 @@ public class Translator {
     }
 
     public ProteinSequence translate(String dnaString) {
-        return translate(new DNASequence(dnaString));
+        try {
+            return translate(new DNASequence(dnaString));
+        }
+        catch(CompoundNotFoundException e) {
+            throw new RuntimeException("Cannot translate DNA sequence due to unknown compound error", e);
+        }
     }
 
 }

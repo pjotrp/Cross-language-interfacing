@@ -6,11 +6,11 @@ package javaa.clike;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.biojava3.core.sequence.compound.AminoAcidCompound;
-import org.biojava3.core.sequence.compound.NucleotideCompound;
-import org.biojava3.core.sequence.template.CompoundSet;
-import org.biojava3.core.sequence.template.Sequence;
-import org.biojava3.core.sequence.transcription.Table;
+import org.biojava.nbio.core.sequence.compound.AminoAcidCompound;
+import org.biojava.nbio.core.sequence.compound.NucleotideCompound;
+import org.biojava.nbio.core.sequence.template.CompoundSet;
+import org.biojava.nbio.core.sequence.template.Sequence;
+import org.biojava.nbio.core.sequence.transcription.Table;
 
 /**
  *

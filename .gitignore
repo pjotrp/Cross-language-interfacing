@@ -4,3 +4,6 @@
 *.jar
 build/
 dist/
+/.vscode/tags
+/tags
+target

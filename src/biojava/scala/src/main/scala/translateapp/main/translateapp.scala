@@ -3,12 +3,11 @@
  *
  */
 
-import bio._
-// import bio.Protein._
+import scala.collection.JavaConversions._
 import java.io._
-import org.biojava3.core.sequence._
-import org.biojava3.core.sequence.transcription.TranscriptionEngine
-import org.biojava3.core.sequence.io.IUPACParser
+import org.biojava.nbio.core.sequence._
+import org.biojava.nbio.core.sequence.io._
+import org.biojava.nbio.core.sequence.transcription._
 
 object TranslateApp {
   val version = "1.0"
@@ -20,7 +19,7 @@ object TranslateApp {
       println("""
 
   Translate a FASTA nucleotide sequence file to amino acids (protein) using
-  BioJava3 translation
+  BioJava4 translation
 
   Usage:
 
@@ -31,7 +30,7 @@ object TranslateApp {
     ./DNAtranslate ../../../test/data/test-dna.fa
 
       """)
-      exit(1)
+      sys.exit(1)
     }
 
     type OptionMap = Map[scala.Symbol, Any]
@@ -58,7 +57,7 @@ object TranslateApp {
                                nextOption(map ++ strOption(string), list.tail)
         case string :: Nil =>  nextOption(map ++ strOption(string), list.tail)
         case option :: tail => println("Unknown option "+option) 
-                               exit(1) 
+                               sys.exit(1) 
       }
       // Map('type -> false)
     }
@@ -97,25 +96,22 @@ object TranslateApp {
     IUPACParser.getInstance().getTable(1);
     IUPACParser.getInstance().getTable("UNIVERSAL");
     val engine = TranscriptionEngine.getDefault()
-    val f = new FastaReader(infile)
-      val ids = f.foreach { 
-        res => 
-          val (id,tag,dna) = res
-          println(List(">",id).mkString) 
-          if (skipTranslate) {
-            println(dna)
-          }
-          else {
-            // val s = new CodonSequence(dna)
-            // println(dna)
-            // println(dna.mkString.toUpperCase)
-            val dna2 = new DNASequence(dna.mkString.toUpperCase)
-            val rna = dna2.getRNASequence(engine)
-            println(rna.getProteinSequence(engine))
-          }
-        }
-
-    0
+    val f = FastaReaderHelper.readFastaDNASequence(new File(infile))
+    
+    f.foreach { res: (String, DNASequence) => 
+      val (id,dna) = res
+      println(List(">",id).mkString) 
+      if (skipTranslate) {
+        println(dna)
+      }
+      else {
+        // val s = new CodonSequence(dna)
+        // println(dna)
+        // println(dna.mkString.toUpperCase)
+        val rna = dna.getRNASequence(engine)
+        println(rna.getProteinSequence(engine))
+      }
+    }
   } // main
 } // object
 
