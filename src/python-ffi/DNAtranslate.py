@@ -36,9 +36,8 @@ for i in range(0, times):
     sys.stderr.write( i+1 )
   for seq_record in SeqIO.parse(fn, "fasta", generic_dna):
     print(">",seq_record.id)
-    ajpseq   = emboss.ajSeqNewNameC(b"atgtcaatggtaagaaatgtatcaaatcagagcgaaaaattggaaattttgt", b"Test sequence")
+    ajpseq   = emboss.ajSeqNewNameC(str(seq_record.seq).encode(), seq_record.id.encode())
     ajpseqt  = emboss.ajTrnSeqOrig(trnTable,ajpseq,1)
-
     seq = emboss.ajSeqGetSeqCopyC(ajpseqt)
     seq = str(c_char_p(seq).value,'utf-8')
     print(seq)
