@@ -51,7 +51,7 @@ ARGV.each do | fn |
   raise "File #{fn} does not exist" if !File.exist?(fn)
   Bio::FlatFile.auto(fn).each do | item |
     seq = Sequence::NA.new(item.data)
-    ajpseq   = Emboss.ajSeqNewNameC("atgtcaatggtaagaaatgtatcaaatcagagcgaaaaattggaaattttgt", "Test sequence")
+    ajpseq   = Emboss.ajSeqNewNameC(seq.dna, item.definition)
     ajpseqt  = Emboss.ajTrnSeqOrig(trnTable,ajpseq,1)
     aa = Emboss.ajSeqGetSeqCopyC(ajpseqt)
     print "> ",item.definition,"\n"
