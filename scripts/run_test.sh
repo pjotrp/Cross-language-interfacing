@@ -178,6 +178,21 @@ cd src/biolib/python
 cmd="./DNAtranslate_EMBOSS.py"
 runtest
 cd ../../..
+pkgs="python"
+short="Python-FFI"
+descr="Python-FFI"
+cd src/python-ffi
+cmd="python DNAtranslate.py"
+runtest
+cd ../../
+pkgs="ruby"
+short="Ruby-FFI"
+descr="Ruby-FFI"
+cd src/ruby-ffi
+cmd="ruby DNAtranslate.rb"
+runtest
+cd ../../
+
 fi
 
 echo "Done."
