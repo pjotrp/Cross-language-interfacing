@@ -9,6 +9,10 @@
 #
 #   time python3 DNAtranslate.py ../../test/data/test-dna.fa
 #
+# Docker:
+#
+#   time docker run -v /tmp:/tmp --link RSERVE:rserve c0fef4d2b6d6 bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; python3 src/EMBOSS/DNAtranslate.py  test/data/test-dna.fa
+#
 
 import sys
 import os
