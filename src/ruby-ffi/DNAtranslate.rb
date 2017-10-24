@@ -58,6 +58,3 @@ ARGV.each do | fn |
     print aa,"\n"
   end
 end
-
-
-
