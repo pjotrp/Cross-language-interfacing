@@ -10,6 +10,10 @@
 #
 #   time ./DNAtranslate.rb ../../test/data/test-dna.fa
 #
+# Docker
+#
+#   time docker run xxxx bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; src/bioruby/DNAtranslate.rb test/data/test-dna.fa"
+#
 # Dependencies: ruby bioruby bigbio biolib
 #
 # To use JRuby use something like

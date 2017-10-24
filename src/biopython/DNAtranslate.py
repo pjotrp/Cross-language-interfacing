@@ -5,6 +5,10 @@
 #
 #   python3 DNAtranslate.py dna.fa [n]
 #
+# Docker:
+#
+#    time docker run xxxx bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; python3 src/biopython/DNAtranslate.py test/data/test-dna.fa "
+#
 # Example
 #
 #   time python3 DNAtranslate.py ../../test/data/test-dna.fa

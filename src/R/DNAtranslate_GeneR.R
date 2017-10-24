@@ -6,7 +6,11 @@
 #
 # Example:
 #
-#   time  env BATCH_VARS="../../test/data/test-dna.fa 2" R -q --no-save --no-restore --no-readline --slave < DNAtranslate_GeneR.R 
+#   time  env BATCH_VARS="../../test/data/test-dna.fa 2" R -q --no-save --no-restore --no-readline --slave < DNAtranslate_GeneR.R
+#
+# Docker
+#
+#   time docker run -v /tmp:/tmp  c0fef4d2b6d6 bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; env BATCH_VARS="test/data/test-dna.fa" R -q --no-save --no-restore --no-readline --slave < src/R/DNAtranslate_GeneR.R"
 
 fasta = '../../test/data/test-dna.fa'
 

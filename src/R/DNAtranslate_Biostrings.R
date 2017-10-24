@@ -2,11 +2,15 @@
 #
 # Usage:
 #
-#   env BATCH_VARS="file.fa [n]" R -q --no-save --no-restore --no-readline --slave < translate.R
+#   env BATCH_VARS="file.fa [n]" R -q --no-save --no-restore --no-readline --slave < DNAttranslate_Biostrings.R
 #
 # Example:
 #
 #   time  env BATCH_VARS="../../test/data/test-dna.fa" R -q --no-save --no-restore --no-readline --slave < DNAtranslate_Biostrings.R
+#
+# Docker
+#
+#   time docker run -v /tmp:/tmp xxxx bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; env BATCH_VARS="test/data/test-dna.fa" R -q --no-save --no-restore --no-readline --slave < src/R/DNAtranslate_Biostrings.R"
 
 fasta = '../../test/data/test-dna.fa'
 

@@ -9,6 +9,10 @@
 #
 #   perl DNAtranslate.pl ../../test/data/test-dna.fa
 #
+# Docker
+#
+#   time docker run xxxx bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; perl src/bioperl/DNAtranslate.pl test/data/test-dna.fa"
+#
 # Dependencies: perl bioperl
 
 use Bio::SeqIO;
@@ -22,4 +26,3 @@ while ( my $seq = $in->next_seq() ) {
  # print($seq->seq(),"\n");
  print($seq->translate()->seq(),"\n");
 }
-

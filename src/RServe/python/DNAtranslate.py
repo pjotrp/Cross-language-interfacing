@@ -9,6 +9,18 @@
 #
 #   time python3 DNAtranslate.py ../../../test/data/test-dna.fa
 #
+# Docker (not working)
+#
+#   time docker run -v /tmp:/tmp  c0fef4d2b6d6 bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; python3 src/RServe/python/DNAtranslate.py  test/data/test-dna.fa"
+#
+# tried:
+#
+# docker run  -v /tmp:/tmp --name RSERVE -p 6311:6311 -d c0fef4d2b6d6 bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; R  -q --no-save --no-restore --no-readline --slave < src/RServe/python/Rserve.R"
+#
+# time docker run -v /tmp:/tmp --link RSERVE:rserve c0fef4d2b6d6 bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; python3 src/RServe/python/DNAtranslate.py  test/data/test-dna.fa"
+# docker: Error response from daemon: Cannot link to a non running container: /RSERVE AS /pensive_borg/rserve.
+#
+#
 
 verbose=False
 

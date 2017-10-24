@@ -5,6 +5,9 @@
 #
 #   time python3 DNAtranslate_RPy2.py ../../../test/data/test-dna.fa [n]
 #
+# Docker
+#
+#   time docker run -v /tmp:/tmp  c0fef4d2b6d6 bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; python3 src/RS/RPy2/DNAtranslate_RPy2.py test/data/test-dna.fa"
 
 verbose=False
 
