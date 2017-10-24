@@ -11,6 +11,10 @@
 #
 # Docker (not working)
 #
+#   Set up Rserve:
+#
+#   docker run --name RSERVE -v /tmp:/tmp -p 6311:6311 -d c0fef4d2b6d6 bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; R  -q --no-save --no-restore --no-readline --slave < /tmp/Rserve.R"
+#
 #   time docker run -v /tmp:/tmp  c0fef4d2b6d6 bash -c "source /etc/profile ; cd /book-evolutionary-genomics ; python3 src/RServe/python/DNAtranslate.py  test/data/test-dna.fa"
 #
 # tried:
